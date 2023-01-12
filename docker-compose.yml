@@ -12,12 +12,14 @@ services:
 
   mongo:
     container_name: mongo
-    image: mongo:4.4
+    image: mongo
     restart: always
     environment:
-      TZ: "America/Costa Rica"
-      MONGO_INITDB_ROOT_USERNAME: "devKuser"
-      MONGO_INITDB_ROOT_PASSWORD: "devKpass"
+      TZ: "America/CostaRica"
+
+      MONGO_INITDB_ROOT_USERNAME: kiot
+      MONGO_INITDB_ROOT_PASSWORD: 9ab60d17
+      
     volumes:
       - ./mongodata:/data/db
     ports:
@@ -25,6 +27,7 @@ services:
 
 
   emqx:
+
     container_name: emqx
     image: emqx/emqx:4.2.3
     restart: always
@@ -35,6 +38,10 @@ services:
       - vol-emqx-data:/opt/emqx/data
       - vol-emqx-etc:/opt/emqx/etc
       - vol-emqx-log:/opt/emqx/log
+
+    links: 
+      - mongo
+      
     environment: 
       
       EMQX_NAME: kIoT
