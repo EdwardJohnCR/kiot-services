@@ -59,7 +59,7 @@ services:
       EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "9ab60d17"
 
       EMQX_ALLOW_ANONYMOUS: "false"
-       EMQX_NOMATCH: "deny"
+      EMQX_NOMATCH: "deny"
 
             # MONGO CONNECTION
       EMQX_AUTH__MONGO__TYPE: single
