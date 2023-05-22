@@ -18,7 +18,7 @@ services:
       TZ: "America/CostaRica"
 
       MONGO_INITDB_ROOT_USERNAME: kiot
-      MONGO_INITDB_ROOT_PASSWORD: 9ab60d17
+      MONGO_INITDB_ROOT_PASSWORD: devpass
       
     volumes:
       - ./mongodata:/data/db
@@ -56,7 +56,7 @@ services:
       TZ: "America/Costa Rica"
 
       # DEFAULT DASH PASS
-      EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "9ab60d17"
+      EMQX_DASHBOARD__DEFAULT_USER__PASSWORD: "devpass"
 
       EMQX_ALLOW_ANONYMOUS: "false"
       EMQX_NOMATCH: "deny"
@@ -70,7 +70,7 @@ services:
       EMQX_AUTH__MONGO__POOL: 8
 
       EMQX_AUTH__MONGO__LOGIN: "kiot"
-      EMQX_AUTH__MONGO__PASSWORD: "9ab60d17"
+      EMQX_AUTH__MONGO__PASSWORD: "devpass"
       EMQX_AUTH__MONGO__AUTH_SOURCE: admin
 
       EMQX_AUTH__MONGO__DATABASE: "kiotdb"
@@ -79,6 +79,7 @@ services:
       EMQX_AUTH__MONGO__SUPER_QUERY__SUPER_FIELD: "is_superuser"
       EMQX_AUTH__MONGO__SUPER_QUERY__SELECTOR: "username=%u"
       EMQX_AUTH__MONGO__SUPER_QUERY: "off"
+      
       EMQX_AUTH__MONGO__AUTH_QUERY__PASSWORD_HASH: plain
       EMQX_AUTH__MONGO__AUTH_QUERY__PASSWORD_FIELD: "password"
       EMQX_AUTH__MONGO__AUTH_QUERY__SELECTOR: "username=%u"
